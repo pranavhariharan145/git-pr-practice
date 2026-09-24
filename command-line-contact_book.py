@@ -7,11 +7,11 @@ def create_contact_book():
     serial_number = int(input("Enter Serial Number: "))
     firstname = input("Enter First Name: ")
     lastname = input("Enter Last Name: ")
-    phoneno = int(input("Enter Phone Number: "))
+    phoneno = input("Enter Phone Number: ")
     email = input("Enter Email: ")
     city = input("Enter City: ")
     state = input("Enter State: ")
-    zip_code = int(input("Enter Zip Code: "))
+    zip_code = input("Enter Zip Code: ")
         
     # Storing in Dictionary
     data_dict = {'Sno':serial_number,
