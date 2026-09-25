@@ -1,27 +1,25 @@
 # Command_Line Contact Book
 
+# Helper function to get values using dictionary
+
+def get_values():
+    return {
+        "serial_number": int(input("Enter Serial Number: ")),
+        "firstname": input("Enter First Name: "),
+        "lastname": input("Enter Last Name: "),
+        "phoneno": input("Enter Phone Number: "),
+        "email": input("Enter Email: "),
+        "city": input("Enter City: "),
+        "state": input("Enter State: "),
+        "zip_code": input("Enter Zip Code: ")
+    }
+
 # Create new Conatct Book
 def create_contact_book(): 
     
-    # Data Input
-    serial_number = int(input("Enter Serial Number: "))
-    firstname = input("Enter First Name: ")
-    lastname = input("Enter Last Name: ")
-    phoneno = input("Enter Phone Number: ")
-    email = input("Enter Email: ")
-    city = input("Enter City: ")
-    state = input("Enter State: ")
-    zip_code = input("Enter Zip Code: ")
-        
     # Storing in Dictionary
-    data_dict = {'Sno':serial_number,
-        'firstname':firstname,
-        'lastname': lastname,
-        'phoneno':phoneno,
-        'email':email,
-        'city': city,
-        'state': state,
-        'zip':zip_code}
+    data_dict = get_values()
+    
     # Opening with Writing mode Writing the dictionary to the data.txt
     with open('data.txt','w' ,encoding="utf-8") as f:
         keys = [key for key in data_dict.keys()]
@@ -36,25 +34,9 @@ def create_contact_book():
 
 # Add Contacts
 def add_contacts():
-    # Data Input
-    serial_number = int(input("Enter Serial Number: "))
-    firstname = input("Enter First Name: ")
-    lastname = input("Enter Last Name: ")
-    phoneno = int(input("Enter Phone Number: "))
-    email = input("Enter Email: ")
-    city = input("Enter City: ")
-    state = input("Enter State: ")
-    zip_code = int(input("Enter Zip Code: "))
-
+    
     # Storing in Dictionary
-    data_dict = {'Sno':serial_number,
-            'firstname':firstname,
-            'lastname': lastname,
-            'phoneno':phoneno,
-            'email':email,
-            'city': city,
-            'state': state,
-            'zip':zip_code}
+    data_dict = get_values()
     
     # Opening with append mode Writing the dictionary to the data.txt
     with open('data.txt','a' ,encoding="utf-8") as f:
