@@ -9,6 +9,7 @@ def decorator(func):
         print("Function Called: ", func.__name__)
         print("Positional arguments passed: ", args)
         print("Keyword arguments passed: ", kwargs)
+        return func(*args, **kwargs)
     return wrapper
 
 @decorator
