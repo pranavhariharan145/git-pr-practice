@@ -1,16 +1,4 @@
-# # Here we will use customers csv file to log json
-
-# import csv
-# import json
-# my_data = {}
-# with open('customers-100.csv', newline='') as csvfile:
-#     reader = csv.DictReader(csvfile)
-#     rows = list(reader)
-
-# values = json.dumps(rows)
-
-# with open("customers.json", "w") as f:
-#     json.dump(values, f, indent = 4)
+# # Here we will use customers csv file to convert to json and log function calls with decorator
 
 import csv
 import json
@@ -20,7 +8,7 @@ def decorator(func):
         print("Logs:")
         print("Function Called: ", func.__name__)
         print("Positional arguments passed: ", args)
-        print("Key word arguments passed: ", kwargs)
+        print("Keyword arguments passed: ", kwargs)
     return wrapper
 
 @decorator
